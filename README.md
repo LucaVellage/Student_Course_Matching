@@ -1,23 +1,31 @@
-# Gale-Shapley algorithm to match students and professors
+# Implementation of Gale-Shapley Algorithm to Match Students with Professors
 #### Leticia Figueiredo Collado, Luca-Verona Vellage, Isabella Urbano-Trujillo, Daniyar Imanaliev, Daniel Boppert
 #### Spring Semester 2024 - Data Structures & Algorithms final project - Master of Data Science for Public Policy
   
   
-Folders: 
+### **Folder Structure:**
 
-1. Code
-1.1 algo_stuff  
-    Anything that touches on the current state of dev for the inner workings for the gs algorithm.  
-    Currently also holds synthetic data creation. This should move from initial "hardcoded" data to an "undefined" structure so it can take the input data frome the flaskapp.  
-1.1.1 first_iteration  
-     Includes the "naive" implementation for a random allocation and then handles even preferences.
-1.1.2 max_spots  
-     Handles the allocation when professors have different numbers of spots available.  
-1.1.3 unequal_sets  
-     Handles the allocation for limited preferences for students and professors, which means students dont rank all professors and viceversa.  
+**1. Implementatio of Gale-Shapley Algorithm:**
+
+1.1 `Code/Algorithm/First_Iteration_Random` 
+     Includes the first naive implementation of the GS-Algorithm to match students with professors, by random allocation and based on even preferences.
+
+1.2 `Code/Algorithm/Limited_Capacities`  
+     Manages allocation in cases where professors have a limited number of available supervision spots. Consequently, the number of students that can be matched to each professor varies across professors but remains finite.
+
+1.3 `Code/Algorithm/Unequal_Preferences` 
+     Manages allocation in scenarios with limited capacities, where students and professors rank each other. The rankings are non-exhaustive, meaning not all professors rank all students, and vice versa.
+
+**2. Frontend: FlaskApp:**
+
+The application used to deployed on the website: https://lfcollado.pythonanywhere.com/ yet is no longer active. 
+
+To run flaskapp locally run in terminal: 
+
+`pip install -r requirements.txt`
+`python app.py`
 
    
-
 ### **Gale–Shapley Algorithm**
 
 The Gale-Shapley algorithm, also known as the stable marriage problem, is a solution for pairing individuals from two sets, such that there are no unstable pairs. It's a fundamental algorithm used in various matching scenarios, like assigning medical students to professors for projects.
@@ -70,10 +78,5 @@ The Gale-Shapley algorithm is efficient due to its computational complexity, whi
 - O(n^2) is not the most efficient time complexity in an absoulte sense, esp. for large datatsets  
 - It is relatively efficient fot SMP, esp considering the constraints of (1) stability and (2) mutual preference satisfaction  
 - SMP belong to a category of problems for which it has not been proven yet if polynomial time algorithms exist for solving them, therefore GS provides a relatively efficient solution to SMP despite running in quadratic time  
-
-**Deployment of Application**
-
-The application is deployed on the website: https://lfcollado.pythonanywhere.com/ as well as deployed and tested locally.
-
 
 
