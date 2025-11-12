@@ -21,10 +21,11 @@
 The application used to deployed on the website: https://lfcollado.pythonanywhere.com/ yet is no longer active. 
 
 To run flaskapp locally run in terminal: 
-
-`pip install -r requirements.txt`
-`python app.py`
-
+```
+pip install -r requirements.txt
+cd Flask_Dynamic
+python run.py
+```
    
 ### **Gale–Shapley Algorithm**
 
